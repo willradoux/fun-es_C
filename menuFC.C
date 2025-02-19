@@ -4,8 +4,8 @@ int tratamentoDeExececao(){
     
     int valor;
 
-    while (scanf("%d", &valor) != 1 || (valor = '.') && (valor = 0)) { 
-        printf("Entrada inválida! Digite um número válido: ");
+    while (scanf("%d", &valor) != 1) { 
+        printf("Entrada invalida! Digite um numero valido: ");
         while (getchar() != '\n');
     }
     return valor;
@@ -18,7 +18,7 @@ void conversao(){
 
     printf("\n>>> || Conversão de temperatura || <<< \n\n");
 
-    printf("Qual conversão deseja fazer?\n");
+    printf("Qual conversao deseja fazer?\n");
 
     while (refazerCalculo == 1){
 
@@ -45,7 +45,7 @@ void conversao(){
         
         printf("Deseja refazer a conversao? 1 para refazer, 2 para voltar ao menu: ");
         while ((refazerCalculo = tratamentoDeExececao()) > 2){
-            printf("Digite uma opcao válida: ");
+            printf("\nDigite uma opcao válida: ");
         }
         
         printf("\n\n");
@@ -108,7 +108,7 @@ void calculoMedia(){
         printf("Deseja refazer o calculo? 1 para refazer, 2 para voltar ao menu: ");
 
         while ((refazerCalculo = tratamentoDeExececao()) > 2){
-            printf("Digite uma opcao válida: ");
+            printf("\nDigite uma opcao válida: ");
         }
 
         printf("\n\n");
@@ -153,7 +153,7 @@ void tabelaMultiplicacao(){
         printf("\nDeseja refazer o calculo? 1 para refazer, 2 para voltar ao menu: ");
 
         while ((refazerCalculo = tratamentoDeExececao()) > 2){
-            printf("Digite uma opcao válida: ");
+            printf("\nDigite uma opcao válida: ");
         }
 
         printf("\n\n");
@@ -173,12 +173,8 @@ int main() {
         printf("4 - Sair\n\n");
 
         printf("\nDigite qual opcao deseja realizar: ");
+        opcao = tratamentoDeExececao();
 
-        while (scanf("%d", &opcao) > 4 || (opcao != 1)){
-            printf("Invalido! Escolha uma das opcoes: ");
-            while (getchar() != '\n');
-        }
-    
         switch (opcao) {
             case 1:
                 conversao();
@@ -192,8 +188,9 @@ int main() {
             case 4:
                 printf("\nVoce escolheu sair.\n\n");
                 break;
+           
             default:
-                printf("\nOpcao invalida! Tente novamente.\n\n");
+                printf("\nOPCAO INVALIDA! TENTE NOVAMENTE: \n\n");
                 break;
         }
     }
